@@ -1,34 +1,69 @@
 <template>
   <div class="home pa-6">
 
-   <v-row>
-     <v-col
-       v-for="n in 9"
-       :key="n"
-       class="d-flex child-flex"
-       cols="4"
-     >
-      <v-img
-        :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-        :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
-        aspect-ratio="1"
-        class="grey lighten-2"
-     >
-       <template v-slot:placeholder>
-          <v-row
-            class="fill-height ma-0"
-            align="center"
-            justify="center"
-          >
-            <v-progress-circular
-              indeterminate
-              color="grey lighten-5"
-            ></v-progress-circular>
-          </v-row>
-        </template>
-      </v-img>
-     </v-col>
-    </v-row>
+   <v-container
+    class="fill-height"
+    fluid
+    style="min-height: 434px"
+  >
+    <v-fade-transition mode="out-in">
+      <v-row>
+        <v-col cols="6">
+          <v-card>
+            <v-img
+              src="SmartHome.jpg"
+              height="125"
+              class="grey darken-4"
+            ></v-img>
+            <v-card-title class="text-h6">
+              Ihr Traumhaus:
+            </v-card-title>
+          </v-card>
+        </v-col>
+
+        <v-col cols="6">
+          <v-card>
+            <v-img
+              src="Touchpad.jpg"
+              height="125"
+              contain
+              class="grey darken-4"
+            ></v-img>
+            <v-card-title class="text-h6">
+              persönlich,
+            </v-card-title>
+          </v-card>
+        </v-col>
+
+        <v-col cols="6">
+          <v-card>
+            <v-img
+              src="Touchpad.jpg"
+              max-height="125"
+              class="grey darken-4"
+            ></v-img>
+            <v-card-title class="text-h6">
+              einfach,
+            </v-card-title>
+          </v-card>
+        </v-col>
+
+        <v-col cols="6">
+          <v-card>
+            <v-img
+              src="Touchpad.jpg"
+              max-height="125"
+              contain
+              class="grey darken-4"
+            ></v-img>
+            <v-card-title class="text-h6">
+              smart !
+            </v-card-title>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-fade-transition>
+  </v-container>
 
   </div>
 </template>
