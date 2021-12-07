@@ -38,12 +38,13 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar
-      absolute
-      color="#fcb69f"
+     <v-app-bar
+      app
+      color="primary"
       dark
       shrink-on-scroll
-      src="https://picsum.photos/1920/1080?random"
+      src="SmartHome.jpg"
+      prominent
       scroll-target="#scrolling-techniques-2"
     >
       <template v-slot:img="{ props }">
@@ -56,7 +57,7 @@
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
       <v-app-bar-title>Title</v-app-bar-title>
-     
+
       <v-spacer></v-spacer>
 
       <v-btn icon>
