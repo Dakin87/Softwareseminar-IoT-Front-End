@@ -1,5 +1,7 @@
 <template>
-  <v-app id="inspire">
+  <v-app 
+    id="inspire"
+    >
     <v-navigation-drawer
       v-model="drawer"
       app
@@ -40,12 +42,9 @@
 
      <v-app-bar>
       app
-      color="primary"
       dark
-      shrink-on-scroll
       src="SmartHome.jpg"
       prominent
-      scroll-target="#scrolling-techniques-2"
     >
       <template v-slot:img="{ props }">
         <v-img
@@ -54,9 +53,9 @@
         ></v-img>
       </template>
 
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-app-bar-title>Title</v-app-bar-title>
+      <v-app-bar-title>MySmartHome</v-app-bar-title>
 
       <v-spacer></v-spacer>
 
@@ -72,6 +71,7 @@
         <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
     </v-app-bar>
+  </v-app>
 </template>
 
 <script>
