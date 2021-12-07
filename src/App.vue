@@ -42,6 +42,7 @@
 
      <v-app-bar>
       app
+      color="primary"
       dark
       src="SmartHome.jpg"
       prominent
