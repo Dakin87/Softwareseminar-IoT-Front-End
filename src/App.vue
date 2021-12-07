@@ -41,11 +41,7 @@
     </v-navigation-drawer>
 
      <v-app-bar>
-      app
-      color="primary"
-      dark
-      src="SmartHome.jpg"
-      prominent
+    <img src="SmartHome.jpg" height="125">
     >
       <template v-slot:img="{ props }">
         <v-img
