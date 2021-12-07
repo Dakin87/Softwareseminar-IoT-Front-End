@@ -42,6 +42,8 @@
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>Softwareseminar IoT Front-End</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn text>Login</v-btn>
     </v-app-bar>
 
     <v-main>
