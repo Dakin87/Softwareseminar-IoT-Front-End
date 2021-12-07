@@ -41,8 +41,7 @@
     </v-navigation-drawer>
 
      <v-app-bar>
-    <img src="SmartHome.jpg" height="125">
-    >
+    
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
