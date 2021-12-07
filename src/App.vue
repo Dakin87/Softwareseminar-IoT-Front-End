@@ -38,7 +38,7 @@
       </v-list>
     </v-navigation-drawer>
 
-     <v-app-bar
+     <v-app-bar>
       app
       color="primary"
       dark
