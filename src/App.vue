@@ -57,7 +57,7 @@
     data: () => ({
       drawer: null,
       items: [
-          { title: 'Startseite', icon: 'mdi-home', to: '/'},
+          { title: 'Startseite', icon: 'mdi-home-circle', to: '/'},
           { title: 'Konfigurator', icon: 'mdi-view-dashboard', to: '/config'},
           { title: 'Über', icon: 'mdi-help-box', to: '/about'},
         ],
