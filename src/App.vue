@@ -3,7 +3,10 @@
     <v-navigation-drawer
       v-model="drawer"
       app
+      dark
+      class="secondary"
     >
+    {{ /* dark regelt den dark mode, und stellt automatisch die Textfarbe auf hell */ }}
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
@@ -38,18 +41,53 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app>
+    <v-app-bar 
+    app
+    dark
+    class="primary">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>Softwareseminar IoT Front-End</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn text>Login</v-btn>
+      <v-btn text to='/login'>Login</v-btn>
     </v-app-bar>
 
     <v-main>
       <router-view></router-view>
     </v-main>
+
+    <v-footer
+    color="primary"
+    dark
+    padless
+    app
+  >
+    <v-row
+      justify="center"
+      no-gutters
+    >
+      <v-btn
+          v-for="icon in icons"
+          :key="icon"
+          class="mx-4 white--text"
+          icon
+      >
+          <v-icon size="24px">
+            {{ icon }}
+          </v-icon>
+        </v-btn>
+
+      <v-col
+        class="primary py-1 text-center white--text"
+        cols="12"
+      >
+        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+      </v-col>
+    </v-row>
+  </v-footer>
+
   </v-app>
+  
 </template>
 
 <script>
@@ -61,6 +99,12 @@
           { title: 'Konfigurator', icon: 'mdi-view-dashboard', to: '/config'},
           { title: 'Über', icon: 'mdi-help-box', to: '/about'},
         ],
+      icons: [
+        'mdi-facebook',
+        'mdi-twitter',
+        'mdi-linkedin',
+        'mdi-instagram',
+      ],
       }),
   }
 </script>
