@@ -39,7 +39,7 @@
     </v-navigation-drawer>
 
  <v-app-bar
-      absolute
+      app
       color="#fcb69f"
       dark
       shrink-on-scroll
