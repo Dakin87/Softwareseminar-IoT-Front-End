@@ -12,21 +12,18 @@
         </div>
         <v-img
           src="persönlich.jpg"
-          aspect-ratio="1.7"
         ></v-img>
         <div class="subheading pt-4">
           einfach,
         </div>
         <v-img
           src="Kind_Handy.jpg"
-          aspect-ratio="2"
         ></v-img>
         <div class="subheading pt-4">
           smart !
         </div>
         <v-img
           src="Touchpad.jpg"
-          aspect-ratio="1.4"
         ></v-img>
       </v-col>
     </v-row>
