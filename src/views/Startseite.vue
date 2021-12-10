@@ -1,69 +1,36 @@
 <template>
   <div class="home pa-6">
 
-   <v-container
-    class="fill-height"
-    fluid
-    style="min-height: 434px"
-   >
-     <v-fade-transition mode="out-in">
-       <v-row>
-         <v-col cols="6">
-           <v-card>
-             <v-img
-               src="SmartHome.jpg"
-               height="125"
-               class="grey darken-4"
-             ></v-img>
-             <v-card-title class="text-h6">
-               Ihr Traumhaus:
-             </v-card-title>
-           </v-card>
-         </v-col>
-
-         <v-col cols="6">
-           <v-card>
-             <v-img
-               src="persönlich.jpg"
-               height="125"
-               contain
-               class="grey darken-4"
-             ></v-img>
-             <v-card-title class="text-h6">
-               persönlich,
-             </v-card-title>
-           </v-card>
-         </v-col>
-
-         <v-col cols="6">
-           <v-card>
-             <v-img
-               src="Kind_Handy.jpg"
-               max-height="125"
-               class="grey darken-4"
-             ></v-img>
-             <v-card-title class="text-h6">
-               einfach,
-             </v-card-title>
-           </v-card>
-         </v-col>
-  
-         <v-col cols="6">
-           <v-card>
-             <v-img
-               src="Touchpad.jpg"
-               max-height="125"
-               contain
-                class="grey darken-4"
-             ></v-img>
-             <v-card-title class="text-h6">
-               smart !
-             </v-card-title>
-           </v-card>
-         </v-col>
-       </v-row>
-      </v-fade-transition>
-   </v-container>
+<v-container fluid>
+    <v-row justify="space-around">
+      <v-col cols="5">
+        <div class="text-h6 mb-1">
+          Ihr Traumhaus:
+        </div>
+        <div class="subheading">
+          persönlich,
+        </div>
+        <v-img
+          src="persönlich.jpg"
+          aspect-ratio="1.7"
+        ></v-img>
+        <div class="subheading pt-4">
+          einfach,
+        </div>
+        <v-img
+          src="Kind_Handy.jpg"
+          aspect-ratio="2"
+        ></v-img>
+        <div class="subheading pt-4">
+          smart !
+        </div>
+        <v-img
+          src="Touchpad.jpg"
+          aspect-ratio="1.4"
+        ></v-img>
+      </v-col>
+    </v-row>
+  </v-container>
 
   </div>
 
