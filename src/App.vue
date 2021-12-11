@@ -10,10 +10,10 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
-            Navgiation
+            Navigation
           </v-list-item-title>
           <v-list-item-subtitle>
-            Navigationsleiste
+            MySmartHome
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -41,8 +41,13 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar>
-    <img src="SmartHome.jpg" height="125">
+     <v-card class="overflow-hidden">
+    <v-app-bar
+      absolute
+      dark
+      shrink-on-scroll
+      src="SmartHome.jpg"
+      scroll-target="#scrolling-techniques-2"
     >
       <template v-slot:img="{ props }">
         <v-img
@@ -53,7 +58,9 @@
 
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-app-bar-title>MySmartHome</v-app-bar-title>
+        <v-app-bar-title>
+         MySmartHome
+        </v-app-bar-title>
 
       <v-spacer></v-spacer>
 
@@ -62,13 +69,17 @@
       </v-btn>
 
       <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-        </v-btn>
-
-      <v-btn icon>
         <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
     </v-app-bar>
+    <v-sheet
+      id="scrolling-techniques-2"
+      class="overflow-y-auto"
+      max-height="600"
+    >
+      <v-container style="height: 1000px;"></v-container>
+    </v-sheet>
+  </v-card>
   </v-app>
   
 </template>
