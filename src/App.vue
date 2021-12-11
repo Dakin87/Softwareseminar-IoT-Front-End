@@ -41,51 +41,34 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar 
-    app
-    dark
-    class="primary">
+    <v-app-bar>
+    <img src="SmartHome.jpg" height="125">
+    >
+      <template v-slot:img="{ props }">
+        <v-img
+          v-bind="props"
+          gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+        ></v-img>
+      </template>
+
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Softwareseminar IoT Front-End</v-toolbar-title>
+      <v-app-bar-title>MySmartHome</v-app-bar-title>
+
       <v-spacer></v-spacer>
-      <v-btn text to='/login'>Login</v-btn>
-    </v-app-bar>
 
-    <v-main>
-      <router-view></router-view>
-    </v-main>
+      <v-btn icon>
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
 
-    <v-footer
-    color="primary"
-    dark
-    padless
-    app
-  >
-    <v-row
-      justify="center"
-      no-gutters
-    >
-      <v-btn
-          v-for="icon in icons"
-          :key="icon"
-          class="mx-4 white--text"
-          icon
-      >
-          <v-icon size="24px">
-            {{ icon }}
-          </v-icon>
+      <v-btn icon>
+        <v-icon>mdi-heart</v-icon>
         </v-btn>
 
-      <v-col
-        class="primary py-1 text-center white--text"
-        cols="12"
-      >
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-      </v-col>
-    </v-row>
-  </v-footer>
-
+      <v-btn icon>
+        <v-icon>mdi-dots-vertical</v-icon>
+      </v-btn>
+    </v-app-bar>
   </v-app>
   
 </template>
@@ -95,7 +78,7 @@
     data: () => ({
       drawer: null,
       items: [
-          { title: 'Startseite', icon: 'mdi-home', to: '/'},
+          { title: 'Startseite', icon: 'mdi-home-circle', to: '/'},
           { title: 'Konfigurator', icon: 'mdi-view-dashboard', to: '/config'},
           { title: 'Über', icon: 'mdi-help-box', to: '/about'},
         ],
