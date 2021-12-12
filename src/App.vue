@@ -43,7 +43,7 @@
 
      <v-card class="overflow-hidden">
     <v-app-bar
-      absolute
+      app
       dark
       shrink-on-scroll
       src="SmartHome.jpg"
