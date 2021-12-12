@@ -56,6 +56,7 @@
         <v-spacer></v-spacer>
         <v-btn text to='/login'>Login</v-btn>
       </v-app-bar>
+
       <v-main>
         <router-view></router-view>
       </v-main>
