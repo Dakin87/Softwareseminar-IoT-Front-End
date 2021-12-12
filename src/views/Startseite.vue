@@ -1,5 +1,5 @@
 <template>
-  <div class="home pa-6">
+  <div class="Startseite pa-6">
 
    <v-container fluid>
      <v-row justify="space-around">
@@ -32,3 +32,9 @@
   </div>
 
 </template>
+
+<script>
+export default {
+  name: 'Startseite'
+}
+</script>
