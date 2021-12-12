@@ -60,7 +60,7 @@
         <router-view></router-view>
       </v-main>
       <v-footer
-      color="primary"
+      color="rgb(1, 87, 155, 0.9)"
       dark
       padless
       app
@@ -79,12 +79,6 @@
               {{ icon }}
             </v-icon>
           </v-btn>
-        <v-col
-          class="primary py-1 text-center white--text"
-          cols="12"
-        >
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-        </v-col>
       </v-row>
     </v-footer>
   </v-app>
