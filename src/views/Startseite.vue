@@ -12,8 +12,8 @@
           <v-card>
             <v-img
               src="Apartment.jpg"
-              height="125"
-              class="grey darken-4"
+              max-height="200"
+              
             ></v-img>
             <v-card-title class="text-h6">
               Ihr Traumhaus:
@@ -24,10 +24,10 @@
         <v-col cols="6">
           <v-card>
             <v-img
-              src="persönlich.jpg"
-              height="125"
+              src="persönlich2.jpg"
+              max-height="200"
               contain
-              class="grey darken-4"
+              
             ></v-img>
             <v-card-title class="text-h6">
               persönlich,
@@ -39,8 +39,8 @@
           <v-card>
             <v-img
               src="Kind_Handy.jpg"
-              max-height="125"
-              class="grey darken-4"
+              max-height="200"
+              
             ></v-img>
             <v-card-title class="text-h6">
               einfach,
@@ -52,9 +52,9 @@
           <v-card>
             <v-img
               src="Touchpad.jpg"
-              max-height="125"
+              max-height="200"
               contain
-              class="grey darken-4"
+              
             ></v-img>
             <v-card-title class="text-h6">
               smart !
