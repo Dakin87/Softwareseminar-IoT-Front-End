@@ -12,7 +12,7 @@
           <v-card>
             <v-img
               src="Apartment.jpg"
-              max-height="200"
+              max-height="140"
               
             ></v-img>
             <v-card-title class="text-h6">
@@ -25,7 +25,7 @@
           <v-card>
             <v-img
               src="persönlich2.jpg"
-              height="200"
+              height="140"
               contain
               
             ></v-img>
@@ -39,7 +39,7 @@
           <v-card>
             <v-img
               src="Kind_Handy.jpg"
-              height="200"
+              height="140"
               
             ></v-img>
             <v-card-title class="text-h6">
@@ -52,7 +52,7 @@
           <v-card>
             <v-img
               src="Touchpad.jpg"
-              max-height="200"
+              max-height="140"
               contain
               
             ></v-img>
@@ -62,9 +62,13 @@
           </v-card>
         </v-col>
 
-        <v-col>
-          <v-btn text to='/login'>Jetzt Konfigurieren</v-btn>
-        </v-col>
+          <v-btn
+           block
+           elevation="14"
+           fab
+           tile
+           color="primary"
+           text to= '/login'>Jetzt Konfigurieren</v-btn>
 
       </v-row>
 
