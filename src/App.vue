@@ -40,9 +40,8 @@
       <v-app-bar 
       app
       dark
-      shrink-on-scroll
       src="SmartHome.jpg"
-      scroll-target="#scrolling-techniques-2"
+      height="100"
       >
         <template v-slot:img="{ props }">
           <v-img
