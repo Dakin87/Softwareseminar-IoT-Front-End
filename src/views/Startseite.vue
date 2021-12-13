@@ -8,12 +8,14 @@
   >
     <v-fade-transition mode="out-in">
       <v-row>
-        <v-col cols="6">
-          <v-card>
+        <v-col auto>
+          <v-card
+            max-width="300"
+          >
             <v-img
               src="Apartment.jpg"
               max-height="140"
-              
+              max-width="300"
             ></v-img>
             <v-card-title class="text-h6">
               Ihr Traumhaus:
@@ -21,13 +23,14 @@
           </v-card>
         </v-col>
 
-        <v-col cols="6">
-          <v-card>
+        <v-col auto>
+          <v-card
+            max-width="300"
+          >
             <v-img
               src="persönlich2.jpg"
-              height="140"
-              contain
-              
+              max-height="140"
+              max-width="300"
             ></v-img>
             <v-card-title class="text-h6">
               persönlich,
@@ -35,12 +38,14 @@
           </v-card>
         </v-col>
 
-        <v-col cols="6">
-          <v-card>
+        <v-col auto>
+          <v-card
+            max-width="300"
+          >
             <v-img
               src="Kind_Handy.jpg"
-              height="140"
-              
+              max-height="140"
+              max-width="300"
             ></v-img>
             <v-card-title class="text-h6">
               einfach,
@@ -48,13 +53,14 @@
           </v-card>
         </v-col>
 
-        <v-col cols="6">
-          <v-card>
+        <v-col auto>
+          <v-card
+            max-width="300"
+          >
             <v-img
               src="Touchpad.jpg"
               max-height="140"
-              contain
-              
+              max-width="300"
             ></v-img>
             <v-card-title class="text-h6">
               smart !
