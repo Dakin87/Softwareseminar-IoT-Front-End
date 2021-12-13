@@ -25,7 +25,7 @@
           <v-card>
             <v-img
               src="persönlich2.jpg"
-              max-height="200"
+              height="200"
               contain
               
             ></v-img>
@@ -39,7 +39,7 @@
           <v-card>
             <v-img
               src="Kind_Handy.jpg"
-              max-height="200"
+              height="200"
               
             ></v-img>
             <v-card-title class="text-h6">
@@ -61,7 +61,13 @@
             </v-card-title>
           </v-card>
         </v-col>
+
+        <v-col>
+          <v-btn text to='/login'>Jetzt Konfigurieren</v-btn>
+        </v-col>
+
       </v-row>
+
     </v-fade-transition>
   </v-container>
   
