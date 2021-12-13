@@ -33,7 +33,7 @@
               max-width="300"
             ></v-img>
             <v-card-title class="text-h6">
-              persönlich,
+              persönlich
             </v-card-title>
           </v-card>
         </v-col>
@@ -48,7 +48,7 @@
               max-width="300"
             ></v-img>
             <v-card-title class="text-h6">
-              einfach,
+              einfach
             </v-card-title>
           </v-card>
         </v-col>
@@ -63,7 +63,7 @@
               max-width="300"
             ></v-img>
             <v-card-title class="text-h6">
-              smart !
+              smart
             </v-card-title>
           </v-card>
         </v-col>
