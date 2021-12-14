@@ -74,7 +74,7 @@
            fab
            tile
            color="primary"
-           text to= '/login'>Jetzt Konfigurieren</v-btn>
+           text to= '/config'>Jetzt Konfigurieren</v-btn>
 
       </v-row>
 
