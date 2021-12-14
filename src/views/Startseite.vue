@@ -68,13 +68,14 @@
           </v-card>
         </v-col>
 
-         <v-btn
-         block
-         elevation="14"
-         fab
-         tile
-         color="primary" absolute
-         text to= '/config'>Jetzt Konfigurieren</v-btn>
+        <v-col>     
+          <v-btn
+           block
+            elevation="14"
+            color="primary" 
+            outlined
+            text to= '/config'>Jetzt Konfigurieren</v-btn>
+        </v-col>
 
       </v-row>
 
