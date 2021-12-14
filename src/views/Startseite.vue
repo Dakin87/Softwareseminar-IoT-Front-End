@@ -7,7 +7,7 @@
     style="min-height: 434px"
   >
     <v-fade-transition mode="out-in">
-      <v-row>
+      <v-row flex>
         <v-col auto>
           <v-card
             max-width="300"
@@ -68,13 +68,13 @@
           </v-card>
         </v-col>
 
-          <v-btn
-           block
-           elevation="14"
-           fab
-           tile
-           color="primary"
-           text to= '/config'>Jetzt Konfigurieren</v-btn>
+         <v-btn
+         block
+         elevation="14"
+         fab
+         tile
+         color="primary" absolute
+         text to= '/config'>Jetzt Konfigurieren</v-btn>
 
       </v-row>
 

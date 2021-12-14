@@ -74,6 +74,7 @@
             :key="icon"
             class="mx-4 white--text"
             icon
+            text to="/about"
         >
             <v-icon size="24px">
               {{ icon }}
