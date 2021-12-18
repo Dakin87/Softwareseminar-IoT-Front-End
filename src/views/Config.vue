@@ -7,13 +7,13 @@
     elevation-1"
     >
       <h3>Draggable 1</h3>
-      <draggable class="list-group" :list="list1" group="people" @change="log">
+      <draggable class="list-group" :list="list1" group="people" @change="log" :move="checkMove">
         <div
           class="list-group-item"
           v-for="(element, index) in list1"
           :key="element.name"
         >
-          {{ element.name }} {{ index }}
+          {{ element.name }} ID:{{element.id}} {{ index }}
         </div>
       </draggable>
     </div>
@@ -22,13 +22,13 @@
     elevation-1
     ">
       <h3>Draggable 2</h3>
-      <draggable class="list-group" :list="list2" group="people" @change="log">
+      <draggable class="list-group" :list="list2" :group="{name: 'people', pull: 'clone', put: false}" @change="log">
         <div
           class="list-group-item"
           v-for="(element, index) in list2"
           :key="element.name"
         >
-          {{ element.name }} {{ index }}
+          {{ element.name }} ID:{{element.id}} {{ index }}
         </div>
       </draggable>
     </div>
@@ -43,7 +43,7 @@
           v-for="(element, index) in list3"
           :key="element.name"
         >
-          {{ element.name }} {{ index }}
+          {{ element.name }} ID:{{element.id}} {{ index }}
         </div>
       </draggable>
     </div>
@@ -58,7 +58,7 @@
           v-for="(element, index) in list4"
           :key="element.name"
         >
-          {{ element.name }} {{ index }}
+          {{ element.name }} ID:{{element.id}} {{ index }} 
         </div>
       </draggable>
     </div>
@@ -67,9 +67,26 @@
 
     <rawDisplayer class="col-3" :value="list2" title="List 2" />
 
-    <rawDisplayer class="col-3" :value="list1" title="List 3" />
+    <rawDisplayer class="col-3" :value="list3" title="List 3" />
 
-    <rawDisplayer class="col-3" :value="list2" title="List 4" />
+    <rawDisplayer class="col-3" :value="list4" title="List 4" />
+
+  <div class="col-12
+    elevation-1"
+    >
+      <h3>Gewünschte Komponenten</h3>
+      <draggable class="list-group" :list="list5" group="people" @change="log">
+        <div
+          class="list-group-item"
+          v-for="(element, index) in list5"
+          :key="element.name"
+        >
+          {{ element.name }} ID:{{element.id}} {{ index }} 
+        </div>
+      </draggable>
+    </div>
+
+    <rawDisplayer class="col-12" :value="list5" title="List 5" />
 
   </div>
 </template>
@@ -78,8 +95,8 @@
 <script>
   import draggable from "vuedraggable";
   export default {
-    name: "two-lists",
-    display: "Two Lists",
+    name: "IoT-Config",
+    display: "IoT Konfigurator",
     order: 1,
     components: {
       draggable
@@ -106,6 +123,11 @@
           { name: "Horst", id: 11 },
           { name: "Edgard", id: 12 },
           { name: "Johnson", id: 13 }
+        ],
+        list5: [
+          { name: "Horst", id: 14 },
+          { name: "Edgard", id: 15 },
+          { name: "Johnson", id: 16 }
         ]
       };
     },
@@ -123,6 +145,11 @@
       },
       log: function(evt) {
         window.console.log(evt);
+      },
+      checkMove: function(evt) {
+        if (evt.relatedContext.list.length>3){
+				return false
+			}
       }
     }
   };
