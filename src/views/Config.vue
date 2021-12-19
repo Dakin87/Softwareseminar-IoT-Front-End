@@ -11,9 +11,10 @@
       <h3>Sensoren</h3>
       <draggable class="list-group" :list="list1" :group="{name: 'Sensoren', pull: 'clone', put: false}" @change="log">
         <v-chip
-          class="list-group-item"
+          class="ma-2 list-group-item"
           v-for="(element) in list1"
           :key="element.name"
+          label
         >
           {{ element.name }} ID:{{element.id}}
         </v-chip>
@@ -26,9 +27,10 @@
       <h3>Interaktion</h3>
       <draggable class="list-group" :list="list2" :group="{name: 'Interaktion', pull: 'clone', put: false}" @change="log">
         <v-chip
-          class="list-group-item"
+          class="ma-2 list-group-item"
           v-for="(element) in list2"
           :key="element.name"
+          label
         >
           {{ element.name }} ID:{{element.id}}
         </v-chip>
@@ -41,9 +43,10 @@
       <h3>Daten</h3>
       <draggable class="list-group" :list="list3" :group="{name: 'Daten', pull: 'clone', put: false}" @change="log">
         <v-chip
-          class="list-group-item"
+          class="ma-2 list-group-item"
           v-for="(element) in list3"
           :key="element.name"
+          label
         >
           {{ element.name }} ID:{{element.id}}
         </v-chip>
@@ -56,9 +59,10 @@
       <h3>Service</h3>
       <draggable class="list-group" :list="list4" :group="{name: 'Service', pull: 'clone', put: false}" @change="log">
         <v-chip
-          class="list-group-item"
+          class="ma-2 list-group-item"
           v-for="(element) in list4"
           :key="element.name"
+          label
         >
           {{ element.name }} ID:{{element.id}}
         </v-chip>
@@ -79,10 +83,11 @@
       <h3>Gewünschte Sensoren</h3>
       <draggable class="list-group" :list="list5" group="Sensoren" @change="log">
         <v-chip
-          class="list-group-item"
+          class="ma-2 list-group-item"
           v-for="(element) in list5"
           :key="element.name"
           @click="removeAt(list5, element)"
+          label
         >
           {{ element.name }} ID:{{element.id}}
         </v-chip>
@@ -95,10 +100,11 @@
       <h3>Gewünschte Interaktion</h3>
       <draggable class="list-group" :list="list6" group="Interaktion" @change="log">
         <v-chip
-          class="list-group-item"
+          class="ma-2 list-group-item"
           v-for="(element) in list6"
           :key="element.name"
           @click="removeAt(list6, element)"
+          label
         >
           {{ element.name }} ID:{{element.id}}
         </v-chip>
@@ -111,10 +117,11 @@
       <h3>Gewünschte Daten</h3>
       <draggable class="list-group" :list="list7" group="Daten" @change="log">
         <v-chip
-          class="list-group-item"
+          class="ma-2 list-group-item"
           v-for="(element) in list7"
           :key="element.name"
           @click="removeAt(list7, element)"
+          label
         >
           {{ element.name }} ID:{{element.id}}
         </v-chip>
@@ -127,10 +134,11 @@
       <h3>Gewünschter Service</h3>
       <draggable class="list-group" :list="list8" group="Service" @change="log">
         <v-chip
-          class="list-group-item"
+          class="ma-2 list-group-item"
           v-for="(element) in list8"
           :key="element.name"
           @click="removeAt(list8, element)"
+          label
         >
           {{ element.name }} ID:{{element.id}}
         </v-chip>
