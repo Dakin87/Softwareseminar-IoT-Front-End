@@ -16,7 +16,10 @@
           :key="element.name"
           label
         >
-          {{ element.name }} ID:{{element.id}}
+          {{ element.name }}
+          <v-icon right color="primary">
+            {{element.iconText}}
+          </v-icon>
         </v-chip>
       </draggable>
     </div>
@@ -32,7 +35,10 @@
           :key="element.name"
           label
         >
-          {{ element.name }} ID:{{element.id}}
+          {{ element.name }}
+          <v-icon right color="primary">
+            {{element.iconText}}
+          </v-icon>
         </v-chip>
       </draggable>
     </div>
@@ -48,7 +54,10 @@
           :key="element.name"
           label
         >
-          {{ element.name }} ID:{{element.id}}
+          {{ element.name }}
+          <v-icon right color="primary">
+            {{element.iconText}}
+          </v-icon>
         </v-chip>
       </draggable>
     </div>
@@ -64,7 +73,10 @@
           :key="element.name"
           label
         >
-          {{ element.name }} ID:{{element.id}}
+          {{ element.name }}
+          <v-icon right color="primary">
+            {{element.iconText}}
+          </v-icon>
         </v-chip>
       </draggable>
     </div>
@@ -89,7 +101,10 @@
           @click="removeAt(list5, element)"
           label
         >
-          {{ element.name }} ID:{{element.id}}
+          {{ element.name }}
+          <v-icon right color="primary">
+            {{element.iconText}}
+          </v-icon>
         </v-chip>
       </draggable>
     </div>
@@ -106,7 +121,10 @@
           @click="removeAt(list6, element)"
           label
         >
-          {{ element.name }} ID:{{element.id}}
+          {{ element.name }}
+          <v-icon right color="primary">
+            {{element.iconText}}
+          </v-icon>
         </v-chip>
       </draggable>
     </div>
@@ -123,7 +141,10 @@
           @click="removeAt(list7, element)"
           label
         >
-          {{ element.name }} ID:{{element.id}}
+          {{ element.name }}
+          <v-icon right color="primary">
+            {{element.iconText}}
+          </v-icon>
         </v-chip>
       </draggable>
     </div>
@@ -140,7 +161,10 @@
           @click="removeAt(list8, element)"
           label
         >
-          {{ element.name }} ID:{{element.id}}
+          {{ element.name }}
+          <v-icon right>
+            {{element.iconText}}
+          </v-icon>
         </v-chip>
       </draggable>
     </div>
@@ -157,6 +181,7 @@
       @click="clearAll"
     > Zurücksetzen
     </v-btn>
+    
     </div>
 
   </div>
@@ -175,25 +200,26 @@
     data() {
       return {
         list1: [
-          { name: "John", id: 1 },
-          { name: "Joao", id: 2 },
-          { name: "Jean", id: 3 },
-          { name: "Gerard", id: 4 }
+          { name: "Temperatur", id: 1, iconText: "mdi-thermometer"},
+          { name: "Feuchtigkeit", id: 2, iconText: "mdi-water"},
+          { name: "Bewegung", id: 3, iconText: "mdi-hand-wave"},
+          { name: "Helligkeit", id: 4, iconText: "mdi-lightbulb-on"}
         ],
         list2: [
-          { name: "Juan", id: 5 },
-          { name: "Edgard", id: 6 },
-          { name: "Johnson", id: 7 }
+          { name: "Bluetooth", id: 5, iconText: "mdi-bluetooth-transfer"},
+          { name: "WLAN", id: 6, iconText: "mdi-wifi"},
+          { name: "Kabel", id: 7, iconText: "mdi-cable-data"},
+          { name: "Mobilfunk", id: 7, iconText: "mdi-network-strength-3"}
         ],
         list3: [
-          { name: "Juan", id: 8 },
-          { name: "Edgard", id: 9 },
-          { name: "Johnson", id: 10 }
+          { name: "Cloud", id: 8, iconText: "mdi-cloud"},
+          { name: "Lokal", id: 9, iconText: "mdi-server"},
+          { name: "Gerät", id: 10, iconText: "mdi-package-variant"}
         ],
         list4: [
-          { name: "Horst", id: 11 },
-          { name: "Edgard", id: 12 },
-          { name: "Johnson", id: 13 }
+          { name: "Horst", id: 11, iconText: ""},
+          { name: "Edgard", id: 12, iconText: ""},
+          { name: "Johnson", id: 13, iconText: ""}
         ],
         list5: [
         
