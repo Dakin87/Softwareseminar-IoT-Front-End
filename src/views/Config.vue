@@ -65,8 +65,8 @@
     <div class="col-3
     elevation-1
     ">
-      <h3>Service</h3>
-      <draggable class="list-group" :list="list4" :group="{name: 'Service', pull: 'clone', put: false}" @change="log">
+      <h3>Plattform</h3>
+      <draggable class="list-group" :list="list4" :group="{name: 'Plattform', pull: 'clone', put: false}" @change="log">
         <v-chip
           class="ma-2 list-group-item"
           v-for="(element) in list4"
@@ -152,8 +152,8 @@
     <div class="col-3
     elevation-1"
     >
-      <h3>Gewünschter Service</h3>
-      <draggable class="list-group" :list="list8" group="Service" @change="log">
+      <h3>Gewünschte Plattform</h3>
+      <draggable class="list-group" :list="list8" group="Plattform" @change="log">
         <v-chip
           class="ma-2 list-group-item"
           v-for="(element) in list8"
