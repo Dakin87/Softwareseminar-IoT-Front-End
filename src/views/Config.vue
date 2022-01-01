@@ -81,6 +81,7 @@
       </draggable>
     </div>
 
+    
     <rawDisplayer class="col-3" :value="list1" title="List 1" />
 
     <rawDisplayer class="col-3" :value="list2" title="List 2" />
@@ -170,18 +171,61 @@
     </div>
 
     <rawDisplayer class="col-3" :value="list5" title="List 5" />
-    <v-spacer></v-spacer>
+   
 
-    <div class="col-12
-    elevation-1"
+    <div class="col-12"
     justify-center
     >
       <v-btn
       elevation="2"
       @click="clearAll"
-    > Zurücksetzen
-    </v-btn>
+      > 
+      Zurücksetzen
+      </v-btn>
     
+    </div>
+    
+    <v-spacer></v-spacer>
+
+    <div class="col-12
+    elevation-1
+    justify-right"
+    > 
+
+      <v-expansion-panels>
+        <v-expansion-panel
+        >
+          <v-expansion-panel-header>
+            <h3>Kostenvoranschlag</h3>
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            Sensoren:
+            {{calculateSensors()}}€
+            <br>
+            Interaktionen:
+            {{calculateInteractions()}}€
+            <br>
+            Daten:
+            {{calculateData()}}€
+            <br>
+            Plattform:
+            {{calculatePlatform()}}€
+            <br>
+            Summe:
+            {{calculateTotal()}}€
+
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+      <h3>Kostenvoranschlag</h3>
+     
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title>Sensoren:</v-list-item-title>
+          {{calculateSensors()}}€
+        </v-list-item-content>
+      </v-list-item>
+
     </div>
 
   </div>
@@ -200,26 +244,26 @@
     data() {
       return {
         list1: [
-          { name: "Temperatur", id: 1, iconText: "mdi-thermometer"},
-          { name: "Feuchtigkeit", id: 2, iconText: "mdi-water"},
-          { name: "Bewegung", id: 3, iconText: "mdi-hand-wave"},
-          { name: "Helligkeit", id: 4, iconText: "mdi-lightbulb-on"}
+          { name: "Temperatur", id: 1, iconText: "mdi-thermometer", price: 20.05},
+          { name: "Feuchtigkeit", id: 2, iconText: "mdi-water", price: 20},
+          { name: "Bewegung", id: 3, iconText: "mdi-hand-wave", price: 20},
+          { name: "Helligkeit", id: 4, iconText: "mdi-lightbulb-on", price: 20}
         ],
         list2: [
-          { name: "Bluetooth", id: 5, iconText: "mdi-bluetooth-transfer"},
-          { name: "WLAN", id: 6, iconText: "mdi-wifi"},
-          { name: "Kabel", id: 7, iconText: "mdi-cable-data"},
-          { name: "Mobilfunk", id: 7, iconText: "mdi-network-strength-3"}
+          { name: "Bluetooth", id: 5, iconText: "mdi-bluetooth-transfer", price: 20},
+          { name: "WLAN", id: 6, iconText: "mdi-wifi", price: 20},
+          { name: "Kabel", id: 7, iconText: "mdi-cable-data", price: 20},
+          { name: "Mobilfunk", id: 7, iconText: "mdi-network-strength-3", price: 20}
         ],
         list3: [
-          { name: "Cloud", id: 8, iconText: "mdi-cloud"},
-          { name: "Lokal", id: 9, iconText: "mdi-server"},
-          { name: "Gerät", id: 10, iconText: "mdi-package-variant"}
+          { name: "Cloud", id: 8, iconText: "mdi-cloud", price: 20},
+          { name: "Lokal", id: 9, iconText: "mdi-server", price: 20},
+          { name: "Gerät", id: 10, iconText: "mdi-package-variant", price: 20}
         ],
         list4: [
-          { name: "Horst", id: 11, iconText: ""},
-          { name: "Edgard", id: 12, iconText: ""},
-          { name: "Johnson", id: 13, iconText: ""}
+          { name: "Horst", id: 11, iconText: "", price: 20},
+          { name: "Edgard", id: 12, iconText: "", price: 20},
+          { name: "Johnson", id: 13, iconText: "", price: 20}
         ],
         list5: [
         
@@ -263,6 +307,42 @@
         this.$data.list6 = [];
         this.$data.list7 = [];
         this.$data.list8 = [];
+      },
+      calculateSensors: function(){
+        let sum = 0;
+        for(let i = 0; i < this.list5.length; i++){
+          sum += (parseFloat(this.list5[i].price));
+          }
+
+        return sum;
+      },
+      calculateInteractions: function(){
+        let sum = 0;
+        for(let i = 0; i < this.list6.length; i++){
+          sum += (parseFloat(this.list6[i].price));
+          }
+
+        return sum;
+      },
+      calculateData: function(){
+        let sum = 0;
+        for(let i = 0; i < this.list7.length; i++){
+          sum += (parseFloat(this.list7[i].price));
+          }
+
+        return sum;
+      },
+      calculatePlatform: function(){
+        let sum = 0;
+        for(let i = 0; i < this.list8.length; i++){
+          sum += (parseFloat(this.list8[i].price));
+          }
+
+        return sum;
+      },
+      calculateTotal: function(){
+        var total = this.calculateSensors() + this.calculateInteractions()+ this.calculateData()+ this.calculatePlatform();
+        return total;
       }
     }
   };
