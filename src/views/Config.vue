@@ -192,39 +192,52 @@
     justify-right"
     > 
 
-      <v-expansion-panels>
-        <v-expansion-panel
-        >
+      <v-expansion-panels focusable>
+        <v-expansion-panel>
           <v-expansion-panel-header>
             <h3>Kostenvoranschlag</h3>
           </v-expansion-panel-header>
           <v-expansion-panel-content>
-            Sensoren:
-            {{calculateSensors()}}€
-            <br>
-            Interaktionen:
-            {{calculateInteractions()}}€
-            <br>
-            Daten:
-            {{calculateData()}}€
-            <br>
-            Plattform:
-            {{calculatePlatform()}}€
-            <br>
-            Summe:
-            {{calculateTotal()}}€
-
+            <v-simple-table style="width:500px">
+              <thead>
+                <tr>
+                  <th class="text-left">
+                    Komponente
+                  </th>
+                  <th class="text-left" style="width:1%">
+                    Preis
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="100">
+                <tr>
+                  <td>Sensoren</td>
+                  <td class="text-right">{{calculateSensors()}}€</td>
+                </tr>
+                <tr>
+                <tr>
+                  <td>Interaktionen</td>
+                  <td class="text-right">{{calculateInteractions()}}€</td>
+                </tr>
+                <tr>
+                  <td>Daten</td>
+                  <td class="text-right">{{calculateData()}}€</td>
+                </tr>
+                <tr>
+                <tr>
+                  <td>Plattform</td>
+                  <td class="text-right">{{calculatePlatform()}}€</td>
+                </tr>
+                <tr>
+                  <td><b>Summe</b></td>
+                  <td class="text-right"><b>{{calculateTotal()}}€</b></td>
+                </tr>
+              </tbody>
+            </v-simple-table>
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
-      <h3>Kostenvoranschlag</h3>
-     
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title>Sensoren:</v-list-item-title>
-          {{calculateSensors()}}€
-        </v-list-item-content>
-      </v-list-item>
+      
 
     </div>
 
@@ -244,26 +257,26 @@
     data() {
       return {
         list1: [
-          { name: "Temperatur", id: 1, iconText: "mdi-thermometer", price: 20.05},
-          { name: "Feuchtigkeit", id: 2, iconText: "mdi-water", price: 20},
-          { name: "Bewegung", id: 3, iconText: "mdi-hand-wave", price: 20},
-          { name: "Helligkeit", id: 4, iconText: "mdi-lightbulb-on", price: 20}
+          { name: "Temperatur", id: 1, iconText: "mdi-thermometer", price: 20.00},
+          { name: "Feuchtigkeit", id: 2, iconText: "mdi-water", price: 20.00},
+          { name: "Bewegung", id: 3, iconText: "mdi-hand-wave", price: 20.00},
+          { name: "Helligkeit", id: 4, iconText: "mdi-lightbulb-on", price: 20.00}
         ],
         list2: [
-          { name: "Bluetooth", id: 5, iconText: "mdi-bluetooth-transfer", price: 20},
-          { name: "WLAN", id: 6, iconText: "mdi-wifi", price: 20},
-          { name: "Kabel", id: 7, iconText: "mdi-cable-data", price: 20},
-          { name: "Mobilfunk", id: 7, iconText: "mdi-network-strength-3", price: 20}
+          { name: "Bluetooth", id: 5, iconText: "mdi-bluetooth-transfer", price: 20.00},
+          { name: "WLAN", id: 6, iconText: "mdi-wifi", price: 20.00},
+          { name: "Kabel", id: 7, iconText: "mdi-cable-data", price: 20.00},
+          { name: "Mobilfunk", id: 7, iconText: "mdi-network-strength-3", price: 20.00}
         ],
         list3: [
-          { name: "Cloud", id: 8, iconText: "mdi-cloud", price: 20},
-          { name: "Lokal", id: 9, iconText: "mdi-server", price: 20},
-          { name: "Gerät", id: 10, iconText: "mdi-package-variant", price: 20}
+          { name: "Cloud", id: 8, iconText: "mdi-cloud", price: 20.00},
+          { name: "Lokal", id: 9, iconText: "mdi-server", price: 20.00},
+          { name: "Gerät", id: 10, iconText: "mdi-package-variant", price: 20.00}
         ],
         list4: [
-          { name: "Horst", id: 11, iconText: "", price: 20},
-          { name: "Edgard", id: 12, iconText: "", price: 20},
-          { name: "Johnson", id: 13, iconText: "", price: 20}
+          { name: "Horst", id: 11, iconText: "", price: 20.00},
+          { name: "Edgard", id: 12, iconText: "", price: 20.00},
+          { name: "Johnson", id: 13, iconText: "", price: 20.00}
         ],
         list5: [
         
@@ -309,7 +322,7 @@
         this.$data.list8 = [];
       },
       calculateSensors: function(){
-        let sum = 0;
+        let sum = 0.00;
         for(let i = 0; i < this.list5.length; i++){
           sum += (parseFloat(this.list5[i].price));
           }
