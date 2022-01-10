@@ -1,98 +1,63 @@
 <template>
-   <v-app >
-      <v-main>
+   <v-app id="inspire">
+      <v-content>
          <v-container fluid fill-height>
             <v-layout align-center justify-center>
                <v-flex xs12 sm8 md4>
                   <v-card class="elevation-12">
                      <v-toolbar dark color="primary">
-                        <v-toolbar-title>{{isRegister ? stateObj.register.name : stateObj.login.name}} form</v-toolbar-title>
+                        <v-toolbar-title>Registriereung</v-toolbar-title>
                      </v-toolbar>
                      <v-card-text>
-                     <form ref="form" @submit.prevent="isRegister ? register() : login()">
-                            <v-text-field
-                              v-model="username"
-                              name="username"
+                        <v-form>
+                           <v-text-field
+                              name="Vorname"
+                              label= "Vorname"
+                              type="text"
+                           ></v-text-field>
+                           <v-text-field
+                              name="Name"
+                              label="Name"
+                              type="text"
+                           ></v-text-field>
+                           <v-text-field
+                              name="E-Mail"
+                              label="E-Mail"
+                              type="text"
+                           ></v-text-field>                           
+                           <v-text-field
+                              name="Benutzername"
                               label="Benutzername"
                               type="text"
-                              placeholder="Benutzername"
-                              required
                            ></v-text-field>
-                           
-                            <v-text-field
-                              v-model="password"
+                           <v-text-field
+                              id="password"
                               name="password"
-                              label="Passwort"
+                              label="Password"
                               type="password"
-                              placeholder="passwort"
-                              required
-                           ></v-text-field>
-
-                           <v-text-field v-if="isRegister"
-                              v-model="confirmPassword"
-                              name="confirmPassword"
-                              label="Passwort bestätigen"
-                              type="password"
-                              placeholder="Passwort bestätigen"
-                              required
-                           ></v-text-field>
-                           <div class="red--text"> {{errorMessage}}</div>
-                           <v-btn type="submit" class="mt-4" color="primary" value="log in">{{isRegister ? stateObj.register.name : stateObj.login.name}}</v-btn>
-                           <div class="grey--text mt-4" v-on:click="isRegister = !isRegister;">
-                              {{toggleMessage}}  
-                           </div>
-                      </form>
+                           ></v-text-field>                           
+                        </v-form>
                      </v-card-text>
+                     <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="primary" to="/login">Bereits Registriert</v-btn>
+                        <v-btn color="primary" >Registrieren</v-btn>
+                     </v-card-actions>
                   </v-card>
-                
                </v-flex>
             </v-layout>
          </v-container>
-      </v-main>
+      </v-content>
    </v-app>
 </template>
 
 <script>
 export default {
-  name: "App",
-  data() {
-    return {
-      username: "",
-      password: "",
-      confirmPassword: "",
-      isRegister : false,
-      errorMessage: "",
-      stateObj: {
-         register :{
-            name: 'Register',
-            message: 'Aleady have an Acoount? login.'
-         },
-         login : {
-            name: 'Login',
-            message: 'Register'
-         }
-      }
-    };
-  },
-  methods: {
-    login() {
-      const { username } = this;
-      console.log(username + "logged in")
-    },
-    register() {
-       if(this.password == this.confirmPassword){
-          this.isRegister = false;
-          this.errorMessage = "";
-          this.$refs.form.reset();
-       }
-       else {
-         this.errorMessage = "password did not match"
-       }
-    }
-  },
-      computed: {
-       toggleMessage : function() { 
-          return this.isRegister ? this.stateObj.register.message : this.stateObj.login.message }
-    }
+   name: 'Login',
+   props: {
+      source: String,
+   },
 };
 </script>
+
+<style></style>

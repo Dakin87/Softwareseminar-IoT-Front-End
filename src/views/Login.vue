@@ -1,55 +1,48 @@
 <template>
-  <div>
-
-    <v-content>
-      <v-card class="elevation-6">
-        <v-toolbar dark color="primary">
-         <v-toolbar-title>Anmeldung</v-toolbar-title>
-        </v-toolbar>
-       <v-card-text>
-         <form ref="form" @submit.prevent="login()">
-            <v-text-field
-             v-model="username"
-             name="username"
-             label="Benutzername"
-             type="text"
-             placeholder="Benutzername"
-             required
-           ></v-text-field>
-                             
-           <v-text-field
-             v-model="password"
-             name="password"
-             label="Passwort"
-             type="password"
-             placeholder="Passwort"
-             required
-           ></v-text-field>
-           <v-btn type="submit" class="mt-4" color="primary" value="log in">Login</v-btn>
-           <v-btn type="submit" class="mt-4" color="primary" value="register" text to= "/register" >Registrierung</v-btn>
-         </form>
-        </v-card-text>
-     </v-card>
-    </v-content>
-
- </div>
-  
+   <v-app id="inspire">
+      <v-content>
+         <v-container fluid fill-height>
+            <v-layout align-center justify-center>
+               <v-flex xs12 sm8 md4>
+                  <v-card class="elevation-12">
+                     <v-toolbar dark color="primary">
+                        <v-toolbar-title>Anmeldung</v-toolbar-title>
+                     </v-toolbar>
+                     <v-card-text>
+                        <v-form>
+                           <v-text-field
+                              name="login"
+                              label="Benutzername"
+                              type="text"
+                           ></v-text-field>
+                           <v-text-field
+                              id="password"
+                              name="password"
+                              label="Password"
+                              type="password"
+                           ></v-text-field>
+                        </v-form>
+                     </v-card-text>
+                     <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="primary" >Login</v-btn>
+                        <v-btn color="primary" to="/register">Registrieren</v-btn>
+                     </v-card-actions>
+                  </v-card>
+               </v-flex>
+            </v-layout>
+         </v-container>
+      </v-content>
+   </v-app>
 </template>
 
 <script>
 export default {
-  name: "Login",
-  data() {
-    return {
-      username: "",
-      password: "",
-    };
-  },
-  methods: {
-    login() {
-      const { username } = this;
-      console.log(username + "logged in")
-    },
-  },
+   name: 'Login',
+   props: {
+      source: String,
+   },
 };
 </script>
+
+<style></style>
