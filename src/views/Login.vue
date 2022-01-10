@@ -18,7 +18,7 @@
                            <v-text-field
                               id="password"
                               name="password"
-                              label="Password"
+                              label="Passwort"
                               type="password"
                            ></v-text-field>
                         </v-form>
@@ -26,7 +26,7 @@
                      <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn color="primary" >Login</v-btn>
-                        <v-btn color="primary" to="/register">Registrieren</v-btn>
+                        <v-btn color="primary" text to="/register">Registrieren</v-btn>
                      </v-card-actions>
                   </v-card>
                </v-flex>
@@ -44,5 +44,3 @@ export default {
    },
 };
 </script>
-
-<style></style>

@@ -33,14 +33,14 @@
                            <v-text-field
                               id="password"
                               name="password"
-                              label="Password"
+                              label="Passwort"
                               type="password"
                            ></v-text-field>                           
                         </v-form>
                      </v-card-text>
                      <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="primary" to="/login">Bereits Registriert</v-btn>
+                        <v-btn color="primary" text to="/login">Bereits Registriert</v-btn>
                         <v-btn color="primary" >Registrieren</v-btn>
                      </v-card-actions>
                   </v-card>
@@ -53,11 +53,9 @@
 
 <script>
 export default {
-   name: 'Login',
+   name: 'register',
    props: {
       source: String,
    },
 };
 </script>
-
-<style></style>
