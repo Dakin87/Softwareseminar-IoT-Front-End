@@ -1,24 +1,35 @@
 <template>
   <div>
-    <v-content>
-      <v-card width="500" class="mx-auto mt-9">
-        <v-card-title>Anmeldung</v-card-title>
-        <v-card-text>
-          <v-text-field label="Benutzername" prepend-icon="mdi-account-circle"/>
-          <v-text-field 
-          label="Passwort" 
-          :type="showPassword ? 'text' : 'password'"
-          prepend-icon="mdi-lock"
-          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-          @click:append="showPassword = !showPassword"/>
-        </v-card-text>
 
-        <v-divider></v-divider>
-        <v-card-actions>
-          <v-btn color="success">Register</v-btn>
-          <v-btn color="info">Login</v-btn>
-        </v-card-actions>
-      </v-card>
+    <v-content>
+      <v-card class="elevation-6">
+        <v-toolbar dark color="primary">
+         <v-toolbar-title>Anmeldung</v-toolbar-title>
+        </v-toolbar>
+       <v-card-text>
+         <form ref="form" @submit.prevent="login()">
+            <v-text-field
+             v-model="username"
+             name="username"
+             label="Benutzername"
+             type="text"
+             placeholder="Benutzername"
+             required
+           ></v-text-field>
+                             
+           <v-text-field
+             v-model="password"
+             name="password"
+             label="Passwort"
+             type="password"
+             placeholder="Passwort"
+             required
+           ></v-text-field>
+           <v-btn type="submit" class="mt-4" color="primary" value="log in">Login</v-btn>
+           <v-btn type="submit" class="mt-4" color="primary" value="register" text to= "/register" >Registrierung</v-btn>
+         </form>
+        </v-card-text>
+     </v-card>
     </v-content>
 
  </div>
@@ -26,21 +37,19 @@
 </template>
 
 <script>
-  export default {
-    data: () =>
-    ({
-        valid: false,
-        name: '',
-        nameRules: [
-          v => !!v || 'Es muss ein Benutzername eingetragen werden!'
-        ],
-        password: '',
-        passwordRules: [
-          v => !!v || 'Es muss ein Passwort eingetragen werden!'
-        ],
-        showPassword:false
-            
-      
-    })
-  }
+export default {
+  name: "Login",
+  data() {
+    return {
+      username: "",
+      password: "",
+    };
+  },
+  methods: {
+    login() {
+      const { username } = this;
+      console.log(username + "logged in")
+    },
+  },
+};
 </script>

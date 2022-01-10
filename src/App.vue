@@ -60,31 +60,31 @@
         <router-view></router-view>
       </v-main>
       <v-footer
-      color="rgb(1, 87, 155, 0.9)"
-      dark
-      padless
-      app
-    >
-      <v-row
-        justify="center"
-        no-gutters
+       color="rgb(1, 87, 155, 0.9)"
+       dark
+       padless
+       app
       >
-        <v-btn
+       <v-row
+         justify="center"
+         no-gutters
+       >
+         <v-btn
             v-for="icon in icons"
             :key="icon"
             class="mx-4 white--text"
             icon
             text to="/about"
-        >
+         >
             <v-icon size="24px">
               {{ icon }}
             </v-icon>
           </v-btn>
-      </v-row>
-    </v-footer>
-  </v-app>
+       </v-row>
+     </v-footer>
+   </v-app>
   
-</template>
+  </template>
 <script>
   export default {
     data: () => ({
