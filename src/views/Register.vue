@@ -85,17 +85,14 @@
         VornameRules: [
           v => !!v || 'Es muss ein Vorname eingetragen werden!'
         ],
-        valid: false,
         Nachname: '',
         NachnameRules: [
           v => !!v || 'Es muss ein Nachname eingetragen werden!'
         ],
-        valid: false,
         Mail: '',
         MailRules: [
           v => !!v || 'Es muss eine E-Mail Adresse eingetragen werden!'
         ],
-        valid: false,
         Benutzername: '',
         BenutzernameRules: [
           v => !!v || 'Es muss ein Benutzername eingetragen werden!'

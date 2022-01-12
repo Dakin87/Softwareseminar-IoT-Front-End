@@ -46,8 +46,8 @@
     <div class="col-3
     elevation-1
     ">
-      <h3>Daten</h3>
-      <draggable class="list-group" :list="list3" :group="{name: 'Daten', pull: 'clone', put: false}" @change="log">
+      <h3>Steuerung</h3>
+      <draggable class="list-group" :list="list3" :group="{name: 'Steuerung', pull: 'clone', put: false}" @change="log">
         <v-chip
           class="ma-2 list-group-item"
           v-for="(element) in list3"
@@ -133,8 +133,8 @@
     <div class="col-3
     elevation-1"
     >
-      <h3>Gewünschte Daten</h3>
-      <draggable class="list-group" :list="list7" group="Daten" @change="log">
+      <h3>Gewünschte Steuerung</h3>
+      <draggable class="list-group" :list="list7" group="Steuerung" @change="log">
         <v-chip
           class="ma-2 list-group-item"
           v-for="(element) in list7"
@@ -220,8 +220,8 @@
                   <td class="text-right">{{calculateInteractions()}}€</td>
                 </tr>
                 <tr>
-                  <td>Daten</td>
-                  <td class="text-right">{{calculateData()}}€</td>
+                  <td>Steuerung</td>
+                  <td class="text-right">{{calculateControl()}}€</td>
                 </tr>
                 <tr>
                 <tr>
@@ -269,9 +269,10 @@
           { name: "Mobilfunk", id: 7, iconText: "mdi-network-strength-3", price: 20.00}
         ],
         list3: [
-          { name: "Cloud", id: 8, iconText: "mdi-cloud", price: 20.00},
-          { name: "Lokal", id: 9, iconText: "mdi-server", price: 20.00},
-          { name: "Gerät", id: 10, iconText: "mdi-package-variant", price: 20.00}
+          { name: "Automatisiert", id: 8, iconText: "mdi-cog", price: 20.00},
+          { name: "Sprachsteuerung", id: 9, iconText: "mdi-microphone", price: 20.00},
+          { name: "Control Hub", id: 10, iconText: "mdi-tablet", price: 20.00},
+          { name: "Mobiles Endgerät", id: 10, iconText: "mdi-cellphone", price: 20.00}
         ],
         list4: [
           { name: "IFTTT", id: 11, iconText: "", price: 0.00},
@@ -339,7 +340,7 @@
 
         return sum;
       },
-      calculateData: function(){
+      calculateControl: function(){
         let sum = 0;
         for(let i = 0; i < this.list7.length; i++){
           sum += (parseFloat(this.list7[i].price));
@@ -356,7 +357,7 @@
         return sum;
       },
       calculateTotal: function(){
-        var total = this.calculateSensors() + this.calculateInteractions()+ this.calculateData()+ this.calculatePlatform();
+        var total = this.calculateSensors() + this.calculateInteractions()+ this.calculateControl()+ this.calculatePlatform();
         return total;
       }
     }
