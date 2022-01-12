@@ -1,37 +1,111 @@
 <template>
+  <div>
     <v-content>
-      <v-card width="500" class="mx-auto mt-9">
-        <v-card-title>Registrierung</v-card-title>
+      <v-card 
+        width="500" 
+        class="pa-3 mx-auto"
+        elevation="7">
+        <v-card-title class="justify-center">Registrierung</v-card-title>
+      
         <v-card-text>
-          <v-text-field label="Vorname" prepend-icon="mdi-account-circle"/>
-          <v-text-field label="Nachname" prepend-icon="mdi-account-circle"/>
-          <v-text-field label="E-Mail" prepend-icon="mdi-at"/>
-          <v-text-field label="Benutzername" prepend-icon="mdi-account-circle"/>
-          <v-text-field 
-          label="Passwort" 
-          :type="showPassword ? 'text' : 'password'"
-          prepend-icon="mdi-lock"
-          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-          @click:append="showPassword = !showPassword"/>
-        </v-card-text>
 
-        <v-divider></v-divider>
-        <v-card-actions>     
-          <v-btn  color="success">Registrieren</v-btn>
-          <v-btn color="info" text to = '/login' >Login</v-btn>     
+          <v-form v-model="valid">
+            <v-text-field
+              v-model="Vorname" 
+              label="Vorname" 
+              prepend-icon="mdi-account"
+              type="text"
+              :rules="VornameRules"
+              required
+              />
+            <v-text-field
+              v-model="Nachname" 
+              label="Nachname" 
+              prepend-icon="mdi-account"
+              type="text"
+              :rules="NachnameRules"
+              required
+              /> 
+            <v-text-field
+              v-model="Mail" 
+              label="E-Mail" 
+              prepend-icon="mdi-at"
+              type="text"
+              :rules="MailRules"
+              required
+              />
+            <v-text-field
+              v-model="Benutzername" 
+              label="Benutzername" 
+              prepend-icon="mdi-account"
+              type="text"
+              :rules="BenutzernameRules"
+              required
+              />                                                    
+            <v-text-field 
+              v-model="password"
+              label="Passwort" 
+              prepend-icon="mdi-lock" 
+              :type="showPassword ? 'text' : 'password'"
+              :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+              @click:append="showPassword=!showPassword"
+              :rules="passwordRules"
+              required
+              />
+            <v-text-field 
+              v-model="password2"
+              label="Passwort wiederholen" 
+              prepend-icon="mdi-lock" 
+              :type="showPassword ? 'text' : 'password'"
+              :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+              @click:append="showPassword=!showPassword"
+              :rules="passwordRules"
+              required
+              />              
+          </v-form>
+        
+        </v-card-text>
+        <v-spacer></v-spacer>
+        <v-card-actions  class="justify-center">
+         <v-btn color="primary" to='/login'>Login</v-btn>
+         <v-btn color="primary" :disabled="!valid" to='/config'>Registrieren</v-btn>
         </v-card-actions>
       </v-card>
     </v-content>
+  </div>
 
 </template>
 
 <script>
-export default {
-  data()
-  {
-    return{
-      showPassword:false
-    }
+  export default {
+    data: () =>
+    ({
+        valid: false,
+        Vorname: '',
+        VornameRules: [
+          v => !!v || 'Es muss ein Vorname eingetragen werden!'
+        ],
+        valid: false,
+        Nachname: '',
+        NachnameRules: [
+          v => !!v || 'Es muss ein Nachname eingetragen werden!'
+        ],
+        valid: false,
+        Mail: '',
+        MailRules: [
+          v => !!v || 'Es muss eine E-Mail Adresse eingetragen werden!'
+        ],
+        valid: false,
+        Benutzername: '',
+        BenutzernameRules: [
+          v => !!v || 'Es muss ein Benutzername eingetragen werden!'
+        ],
+        password: '',
+        passwordRules: [
+          v => !!v || 'Es muss ein Passwort eingetragen werden!'
+        ],
+        showPassword:false          
+      
+    })
   }
-}
 </script>
