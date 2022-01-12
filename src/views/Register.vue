@@ -91,7 +91,8 @@
         ],
         Mail: '',
         MailRules: [
-          v => !!v || 'Es muss eine E-Mail Adresse eingetragen werden!'
+          v => !!v || 'Es muss eine E-Mail Adresse eingetragen werden!',
+          v => /.+@.+/.test(v) || 'Die E-Mail Adresse muss gültig sein!'
         ],
         Benutzername: '',
         BenutzernameRules: [
@@ -99,7 +100,8 @@
         ],
         password: '',
         passwordRules: [
-          v => !!v || 'Es muss ein Passwort eingetragen werden!'
+          v => !!v || 'Es muss ein Passwort eingetragen werden!',
+          v => (v && v.length >= 8) || 'Dass Passwort muss mehr als 8 Zeichen haben!'
         ],
         showPassword:false          
       
