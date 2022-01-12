@@ -274,9 +274,11 @@
           { name: "Gerät", id: 10, iconText: "mdi-package-variant", price: 20.00}
         ],
         list4: [
-          { name: "Horst", id: 11, iconText: "", price: 20.00},
-          { name: "Edgard", id: 12, iconText: "", price: 20.00},
-          { name: "Johnson", id: 13, iconText: "", price: 20.00}
+          { name: "IFTTT", id: 11, iconText: "", price: 0.00},
+          { name: "Conrad Connect", id: 12, iconText: "", price: 0.00},
+          { name: "iHaus", id: 13, iconText: "", price: 89.00},
+          { name: "Homee", id: 14, iconText: "", price: 112.00},
+          { name: "Qivicon", id: 15, iconText: "", price: 20.00}
         ],
         list5: [
         
