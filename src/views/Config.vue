@@ -205,7 +205,10 @@
                   <th class="text-subtitle-1 font-weight-bold">
                     Komponenten
                   </th>
-                  <th class="text-subtitle-1 font-weight-bold" style="width:1%">
+                  <th class="text-subtitle-1 font-weight-bold" style="width:10%">
+                    Stückzahl
+                  </th>
+                  <th class="text-subtitle-1 font-weight-bold" style="width:10%">
                     Preis
                   </th>
                 </tr>
@@ -213,24 +216,29 @@
               <tbody class="100">
                 <tr>
                   <td>Sensoren</td>
+                  <td class="text-right">{{this.list5.length}}</td>
                   <td class="text-right">{{calculateSensors()}}€</td>
                 </tr>
                 <tr>
                 <tr>
                   <td>Interaktionen</td>
+                  <td class="text-right">{{this.list6.length}}</td>
                   <td class="text-right">{{calculateInteractions()}}€</td>
                 </tr>
                 <tr>
                   <td>Steuerung</td>
+                  <td class="text-right">{{this.list7.length}}</td>
                   <td class="text-right">{{calculateControl()}}€</td>
                 </tr>
                 <tr>
                 <tr>
                   <td>Plattform</td>
+                  <td class="text-right">{{this.list8.length}}</td>
                   <td class="text-right">{{calculatePlatform()}}€</td>
                 </tr>
                 <tr>
                   <td><b>Summe</b></td>
+                  <td class="text-right">{{this.list5.length + this.list6.length + this.list7.length + this.list8.length}}</td>
                   <td class="text-right"><b>{{calculateTotal()}}€</b></td>
                 </tr>
               </tbody>
