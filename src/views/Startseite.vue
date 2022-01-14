@@ -70,15 +70,19 @@
 
         <v-col cols="12">    
           <v-btn
-           block
-            elevation="14"
+            block
+            elevation="4"
             color="primary" 
             outlined
-            text to= '/config'>Jetzt Konfigurieren</v-btn>
+            text to= '/config'>Jetzt Konfigurieren 
+          </v-btn>
         </v-col>
 
         <v-col cols="12">    
-          <v-card>
+          <v-card
+          elevation="4"
+          class="pa-6"
+          >
            <h3>MySmartHome - Ihr Smarthome Konfigurator</h3>
            <p>
              <br>Smarte Geräte können ihren Nutzern das Leben in vielen Bereichen erleichtern. 

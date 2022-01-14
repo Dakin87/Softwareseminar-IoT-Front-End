@@ -94,7 +94,7 @@ export default {
       items: [
           { title: 'Startseite', icon: 'mdi-home', to: '/'},
           { title: 'Konfigurator', icon: 'mdi-view-dashboard', to: '/config'},
-          { title: 'Über', icon: 'mdi-help-box', to: '/about'},
+          { title: 'Impressum', icon: 'mdi-help-box', to: '/about'},
         ],
       icons: [
         'mdi-facebook',

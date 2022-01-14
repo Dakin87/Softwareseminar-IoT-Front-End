@@ -188,11 +188,12 @@
     <v-spacer></v-spacer>
 
     <div class="col-12
-    elevation-1
     justify-right"
     > 
 
-      <v-expansion-panels focusable>
+      <v-expansion-panels focusable
+        
+      >
         <v-expansion-panel>
           <v-expansion-panel-header>
             <h3>Kostenvoranschlag</h3>
@@ -201,10 +202,10 @@
             <v-simple-table style="width:500px">
               <thead>
                 <tr>
-                  <th class="text-left">
-                    Komponente
+                  <th class="text-subtitle-1 font-weight-bold">
+                    Komponenten
                   </th>
-                  <th class="text-left" style="width:1%">
+                  <th class="text-subtitle-1 font-weight-bold" style="width:1%">
                     Preis
                   </th>
                 </tr>
