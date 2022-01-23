@@ -8,8 +8,8 @@
     <div class="col-3
     elevation-1"
     >
-      <h3>Sensoren</h3>
-      <draggable class="list-group" :list="list1" :group="{name: 'Sensoren', pull: 'clone', put: false}" @change="log">
+      <h3>Geräte</h3>
+      <draggable class="list-group" :list="list1" :group="{name: 'Geräte', pull: 'clone', put: false}" @change="log">
         <v-chip
           class="ma-2 list-group-item"
           v-for="(element) in list1"
@@ -93,8 +93,8 @@
   <div class="col-3
     elevation-1"
     >
-      <h3>Gewünschte Sensoren</h3>
-      <draggable class="list-group" :list="list5" group="Sensoren" @change="log">
+      <h3>Gewünschte Geräte</h3>
+      <draggable class="list-group" :list="list5" group="Geräte" @change="log" >
         <v-chip
           class="ma-2 list-group-item"
           v-for="(element) in list5"
@@ -215,9 +215,9 @@
               </thead>
               <tbody class="100">
                 <tr>
-                  <td>Sensoren</td>
+                  <td>Geräte</td>
                   <td class="text-right">{{this.list5.length}}</td>
-                  <td class="text-right">{{calculateSensors()}}€</td>
+                  <td class="text-right">{{calculateDevices()}}€</td>
                 </tr>
                 <tr>
                 <tr>
@@ -266,29 +266,35 @@
     data() {
       return {
         list1: [
-          { name: "Temperatur", id: 1, iconText: "mdi-thermometer", price: 20.00},
-          { name: "Feuchtigkeit", id: 2, iconText: "mdi-water", price: 20.00},
-          { name: "Bewegung", id: 3, iconText: "mdi-hand-wave", price: 20.00},
-          { name: "Helligkeit", id: 4, iconText: "mdi-lightbulb-on", price: 20.00}
+          { name: "Steckdose", id: 1, iconText: "mdi-flash", price: 15.00},
+          { name: "Heizkörperthermostat", id: 2, iconText: "mdi-home-thermometer", price: 40.00},
+          { name: "Glühbirne", id: 3, iconText: "mdi-lightbulb-on", price: 20.00},
+          { name: "Musikbox", id: 4, iconText: "mdi-music", price: 50.00},
+          { name: "Tür-/Fensterkontakt", id: 17, iconText: "mdi-door", price: 40.00},
+          { name: "Feuermelder", id: 18, iconText: "mdi-fire-alert", price: 80.00},
+          { name: "Staubsaugroboter", id: 19, iconText: "mdi-robot-vacuum", price: 199.00},
+          { name: "Mähroboter", id: 20, iconText: "mdi-robot-mower", price: 400.00},
+          { name: "Backofen", id: 21, iconText: "mdi-stove", price: 1600.00},
+          
         ],
         list2: [
-          { name: "Bluetooth", id: 5, iconText: "mdi-bluetooth-transfer", price: 20.00},
+          { name: "Bluetooth", id: 5, iconText: "mdi-bluetooth-transfer", price: 5.00},
           { name: "WLAN", id: 6, iconText: "mdi-wifi", price: 20.00},
           { name: "Kabel", id: 7, iconText: "mdi-cable-data", price: 20.00},
           { name: "Mobilfunk", id: 7, iconText: "mdi-network-strength-3", price: 20.00}
         ],
         list3: [
           { name: "Automatisiert", id: 8, iconText: "mdi-cog", price: 20.00},
-          { name: "Sprachsteuerung", id: 9, iconText: "mdi-microphone", price: 20.00},
-          { name: "Control Hub", id: 10, iconText: "mdi-tablet", price: 20.00},
-          { name: "Mobiles Endgerät", id: 10, iconText: "mdi-cellphone", price: 20.00}
+          { name: "Sprachsteuerung", id: 9, iconText: "mdi-microphone", price: 50.00},
+          { name: "Control Hub", id: 10, iconText: "mdi-tablet", price: 50.00},
+          { name: "Mobiles Endgerät", id: 10, iconText: "mdi-cellphone", price: 0.00}
         ],
         list4: [
           { name: "IFTTT", id: 11, iconText: "", price: 0.00},
-          { name: "Conrad Connect", id: 12, iconText: "", price: 0.00},
-          { name: "iHaus", id: 13, iconText: "", price: 89.00},
-          { name: "Homee", id: 14, iconText: "", price: 112.00},
-          { name: "Qivicon", id: 15, iconText: "", price: 20.00}
+          { name: "iHaus", id: 12, iconText: "", price: 89.00},
+          { name: "Homee", id: 13, iconText: "", price: 112.00},
+          { name: "Qivicon", id: 14, iconText: "", price: 20.00},
+          { name: "Apple", id: 15, iconText: "", price: 100.00}
         ],
         list5: [
         
@@ -333,7 +339,7 @@
         this.$data.list7 = [];
         this.$data.list8 = [];
       },
-      calculateSensors: function(){
+      calculateDevices: function(){
         let sum = 0.00;
         for(let i = 0; i < this.list5.length; i++){
           sum += (parseFloat(this.list5[i].price));
@@ -366,7 +372,7 @@
         return sum;
       },
       calculateTotal: function(){
-        var total = this.calculateSensors() + this.calculateInteractions()+ this.calculateControl()+ this.calculatePlatform();
+        var total = this.calculateDevices() + this.calculateInteractions()+ this.calculateControl()+ this.calculatePlatform();
         return total;
       }
     }
